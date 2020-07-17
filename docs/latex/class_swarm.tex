@@ -1,0 +1,156 @@
+\hypertarget{class_swarm}{}\doxysection{Swarm Class Reference}
+\label{class_swarm}\index{Swarm@{Swarm}}
+
+
+Represents a swarm of particles moving accross a bounded space and trying to optimize some given function.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_swarm_ab45214d7a38c1db09bdba404bf0c54a5}{Swarm}} (std\+::vector$<$ std\+::pair$<$ double, double $>$$>$ bounds, int n, double($\ast$fitness)(std\+::vector$<$ double $>$), double omega, double d1, double d2)
+\begin{DoxyCompactList}\small\item\em Construct the swarm by randomly initializing the particles, finding and storing the best so far. \end{DoxyCompactList}\item 
+std\+::tuple$<$ std\+::vector$<$ double $>$, double, int $>$ \mbox{\hyperlink{class_swarm_a18a25ecbc3e3285160c007f4f5b7593e}{optimization\+Search}} (int max\+Total\+Iter, int max\+Partial\+Iter)
+\begin{DoxyCompactList}\small\item\em Perform \mbox{\hyperlink{class_particle}{Particle}} \mbox{\hyperlink{class_swarm}{Swarm}} Optimization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_particle}{Particle}} $\ast$ \mbox{\hyperlink{class_swarm_a9859ebc277b2187b3215fe8831bb7080}{find\+Best\+Current\+Particle}} ()
+\begin{DoxyCompactList}\small\item\em Find the particle that is currently in the best position, across the whole swarm. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_swarm_a0a864c9754cac8a9ac7bedc929972e02}\label{class_swarm_a0a864c9754cac8a9ac7bedc929972e02}} 
+void \mbox{\hyperlink{class_swarm_a0a864c9754cac8a9ac7bedc929972e02}{update\+Best\+All\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Update the best optimal position and optimal function value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_swarm_a10f11768a2f1848d4a0454e5d7e71c80}{get\+Space\+Dimensions}} ()
+\begin{DoxyCompactList}\small\item\em Get the dimensionality of the search space. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_swarm_a528175c2f63c15f48bcefedb1bbbcbfd}{get\+Population\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of particles in the swarm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_swarm_aa409a53f6dcc4196071442771e1fb932}\label{class_swarm_aa409a53f6dcc4196071442771e1fb932}} 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ {\bfseries space\+Bounds}
+\item 
+\mbox{\Hypertarget{class_swarm_a1313e81ed31cf71bd757b2ec9b295956}\label{class_swarm_a1313e81ed31cf71bd757b2ec9b295956}} 
+std\+::vector$<$ \mbox{\hyperlink{class_particle}{Particle}} $>$ {\bfseries population}
+\item 
+\mbox{\Hypertarget{class_swarm_a8d5a8ea73d4ff2d17fe2c8956e937b93}\label{class_swarm_a8d5a8ea73d4ff2d17fe2c8956e937b93}} 
+double {\bfseries inertia}
+\item 
+\mbox{\Hypertarget{class_swarm_ac79f4a6dafa79e9105f860caeed8f1f9}\label{class_swarm_ac79f4a6dafa79e9105f860caeed8f1f9}} 
+double {\bfseries c1}
+\item 
+\mbox{\Hypertarget{class_swarm_acefe34b6210956f01f91256edaf38caa}\label{class_swarm_acefe34b6210956f01f91256edaf38caa}} 
+double {\bfseries c2}
+\item 
+\mbox{\Hypertarget{class_swarm_abe2d7b1069637e7b72a1847d46e12690}\label{class_swarm_abe2d7b1069637e7b72a1847d46e12690}} 
+double($\ast$ {\bfseries fitness\+Function} )(std\+::vector$<$ double $>$)
+\item 
+\mbox{\Hypertarget{class_swarm_af05d59de09dbef4ba29994b263a77c51}\label{class_swarm_af05d59de09dbef4ba29994b263a77c51}} 
+std\+::vector$<$ double $>$ {\bfseries best\+Position\+All\+Time}
+\item 
+\mbox{\Hypertarget{class_swarm_a3bb5d75be7414ba1b384239dd6197148}\label{class_swarm_a3bb5d75be7414ba1b384239dd6197148}} 
+double {\bfseries best\+Fitness\+All\+Time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a swarm of particles moving accross a bounded space and trying to optimize some given function. 
+
+\begin{DoxyAuthor}{Author}
+Nieves Montes Gómez 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_swarm_ab45214d7a38c1db09bdba404bf0c54a5}\label{class_swarm_ab45214d7a38c1db09bdba404bf0c54a5}} 
+\index{Swarm@{Swarm}!Swarm@{Swarm}}
+\index{Swarm@{Swarm}!Swarm@{Swarm}}
+\doxysubsubsection{\texorpdfstring{Swarm()}{Swarm()}}
+{\footnotesize\ttfamily Swarm\+::\+Swarm (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$$>$}]{bounds,  }\item[{int}]{pop\+Size,  }\item[{double($\ast$)(std\+::vector$<$ double $>$)}]{fitness,  }\item[{double}]{omega,  }\item[{double}]{d1,  }\item[{double}]{d2 }\end{DoxyParamCaption})}
+
+
+
+Construct the swarm by randomly initializing the particles, finding and storing the best so far. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & Vector of pairs, indicating the allowed ranges in each dimensions of the search space. \\
+\hline
+{\em pop\+Size} & Number of particles in the swarm. \\
+\hline
+{\em fitness} & Pointer to the function to be optimized. It must take in a vector of doubles and returns a double. \\
+\hline
+{\em omega} & Inertia weight hyperparameter. \\
+\hline
+{\em d1} & Weight of the individual\textquotesingle{}s particle best position so far in the update. \\
+\hline
+{\em d2} & Weight of the best position so far across the whole swarm in the update. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_swarm_a9859ebc277b2187b3215fe8831bb7080}\label{class_swarm_a9859ebc277b2187b3215fe8831bb7080}} 
+\index{Swarm@{Swarm}!findBestCurrentParticle@{findBestCurrentParticle}}
+\index{findBestCurrentParticle@{findBestCurrentParticle}!Swarm@{Swarm}}
+\doxysubsubsection{\texorpdfstring{findBestCurrentParticle()}{findBestCurrentParticle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_particle}{Particle}} $\ast$ Swarm\+::find\+Best\+Current\+Particle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Find the particle that is currently in the best position, across the whole swarm. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the partile in the best position, currently. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_swarm_a528175c2f63c15f48bcefedb1bbbcbfd}\label{class_swarm_a528175c2f63c15f48bcefedb1bbbcbfd}} 
+\index{Swarm@{Swarm}!getPopulationSize@{getPopulationSize}}
+\index{getPopulationSize@{getPopulationSize}!Swarm@{Swarm}}
+\doxysubsubsection{\texorpdfstring{getPopulationSize()}{getPopulationSize()}}
+{\footnotesize\ttfamily int Swarm\+::get\+Population\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the number of particles in the swarm. 
+
+\begin{DoxyReturn}{Returns}
+The size of the swarm. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_swarm_a10f11768a2f1848d4a0454e5d7e71c80}\label{class_swarm_a10f11768a2f1848d4a0454e5d7e71c80}} 
+\index{Swarm@{Swarm}!getSpaceDimensions@{getSpaceDimensions}}
+\index{getSpaceDimensions@{getSpaceDimensions}!Swarm@{Swarm}}
+\doxysubsubsection{\texorpdfstring{getSpaceDimensions()}{getSpaceDimensions()}}
+{\footnotesize\ttfamily int Swarm\+::get\+Space\+Dimensions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the dimensionality of the search space. 
+
+\begin{DoxyReturn}{Returns}
+The number of dimensions of the search space. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_swarm_a18a25ecbc3e3285160c007f4f5b7593e}\label{class_swarm_a18a25ecbc3e3285160c007f4f5b7593e}} 
+\index{Swarm@{Swarm}!optimizationSearch@{optimizationSearch}}
+\index{optimizationSearch@{optimizationSearch}!Swarm@{Swarm}}
+\doxysubsubsection{\texorpdfstring{optimizationSearch()}{optimizationSearch()}}
+{\footnotesize\ttfamily std\+::tuple$<$ std\+::vector$<$ double $>$, double, int $>$ Swarm\+::optimization\+Search (\begin{DoxyParamCaption}\item[{int}]{max\+Total\+Iter,  }\item[{int}]{max\+Partial\+Iter }\end{DoxyParamCaption})}
+
+
+
+Perform \mbox{\hyperlink{class_particle}{Particle}} \mbox{\hyperlink{class_swarm}{Swarm}} Optimization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Total\+Iter} & Maximum iterations before the search is halted. \\
+\hline
+{\em max\+Partial\+Iter} & Maximum iterations {\itshape without an update of the provisional solution} before the search is halted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple with the optimal point found, its optimal function value and the number of iterations before halting. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nmontes/\+One\+Drive/\+Documentos/particle-\/swarm/swarm.\+cpp\end{DoxyCompactItemize}

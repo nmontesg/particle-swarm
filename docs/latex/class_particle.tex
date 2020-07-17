@@ -1,0 +1,145 @@
+\hypertarget{class_particle}{}\doxysection{Particle Class Reference}
+\label{class_particle}\index{Particle@{Particle}}
+
+
+Represents an individual particle in the swarm.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_particle_a067c7a572c69ff51f3304f9b90e51a0d}{Particle}} (std\+::vector$<$ std\+::pair$<$ double, double $>$$>$ bounds, double($\ast$fitness\+Function)(std\+::vector$<$ double $>$))
+\begin{DoxyCompactList}\small\item\em Constructor that initialized a particle with random position and velocity within the allowed bounds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_particle_a143a80ae4c1831946cb81b20c39b8e35}{update\+Velocity}} (double inertia, double c1, double c2, std\+::vector$<$ double $>$ \&all\+Time\+Best)
+\begin{DoxyCompactList}\small\item\em Update the velocity of the particle according to the properties of the swarm. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_particle_aeb5ac29c4aa283c78dd9a5a2013fc3fc}\label{class_particle_aeb5ac29c4aa283c78dd9a5a2013fc3fc}} 
+void \mbox{\hyperlink{class_particle_aeb5ac29c4aa283c78dd9a5a2013fc3fc}{update\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Update the current position by adding the velocity to it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_particle_a1136c39474d31011657697370033d085}{update\+Fitness}} (double($\ast$fitness\+Function)(std\+::vector$<$ double $>$))
+\begin{DoxyCompactList}\small\item\em Update the fitness ({\itshape optimality}) of the particle according to the current position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_particle_a04e161fb546e6257f59bc5302bbc871e}\label{class_particle_a04e161fb546e6257f59bc5302bbc871e}} 
+void \mbox{\hyperlink{class_particle_a04e161fb546e6257f59bc5302bbc871e}{update\+Best}} ()
+\begin{DoxyCompactList}\small\item\em Update the best position and fitness with the current ones if they exceed the old optimal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_particle_af3033bef938cef59d16d400ecdf722c3}\label{class_particle_af3033bef938cef59d16d400ecdf722c3}} 
+void \mbox{\hyperlink{class_particle_af3033bef938cef59d16d400ecdf722c3}{print\+Particle\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Output particle data to console (for debugging purposes). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_particle_ab317d66e868dafa8aa0539c5c920d505}{get\+Best\+Fitness}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the best optimal the particle has encountered so far. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_particle_af2e31d496892e041858587603d670630}{get\+Best\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the best position the particle has encountered so far. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_particle_a24a43b19b941023e6bcc2bcd811414b6}\label{class_particle_a24a43b19b941023e6bcc2bcd811414b6}} 
+std\+::vector$<$ double $>$ {\bfseries current\+Position}
+\item 
+\mbox{\Hypertarget{class_particle_a13353c95d1dafd8c2e13c6e66865a15c}\label{class_particle_a13353c95d1dafd8c2e13c6e66865a15c}} 
+std\+::vector$<$ double $>$ {\bfseries best\+Position}
+\item 
+\mbox{\Hypertarget{class_particle_ae6844e60210974553b6014b1f7577823}\label{class_particle_ae6844e60210974553b6014b1f7577823}} 
+double {\bfseries current\+Fitness}
+\item 
+\mbox{\Hypertarget{class_particle_a5fbe433da5e6de07aab107244a18a7bc}\label{class_particle_a5fbe433da5e6de07aab107244a18a7bc}} 
+double {\bfseries best\+Fitness}
+\item 
+\mbox{\Hypertarget{class_particle_a956794a0fffcb2e1d8c71a4f12f243a0}\label{class_particle_a956794a0fffcb2e1d8c71a4f12f243a0}} 
+std\+::vector$<$ double $>$ {\bfseries velocity}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an individual particle in the swarm. 
+
+All methods are public since they need to be accessed from the \mbox{\hyperlink{class_swarm}{Swarm}} class. \begin{DoxyAuthor}{Author}
+Nieves Montes Gómez 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_particle_a067c7a572c69ff51f3304f9b90e51a0d}\label{class_particle_a067c7a572c69ff51f3304f9b90e51a0d}} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$$>$}]{bounds,  }\item[{double($\ast$)(std\+::vector$<$ double $>$)}]{fitness\+Function }\end{DoxyParamCaption})}
+
+
+
+Constructor that initialized a particle with random position and velocity within the allowed bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & Vector of pairs, indicating the allowed ranges in each dimensions of the search space. \\
+\hline
+{\em fitness\+Function} & Pointer to the function to be optimized. It must take in a vector of doubles and returns a double. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_particle_ab317d66e868dafa8aa0539c5c920d505}\label{class_particle_ab317d66e868dafa8aa0539c5c920d505}} 
+\index{Particle@{Particle}!getBestFitness@{getBestFitness}}
+\index{getBestFitness@{getBestFitness}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{getBestFitness()}{getBestFitness()}}
+{\footnotesize\ttfamily double Particle\+::get\+Best\+Fitness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the best optimal the particle has encountered so far. 
+
+\begin{DoxyReturn}{Returns}
+Best optimal found by the particle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_particle_af2e31d496892e041858587603d670630}\label{class_particle_af2e31d496892e041858587603d670630}} 
+\index{Particle@{Particle}!getBestPosition@{getBestPosition}}
+\index{getBestPosition@{getBestPosition}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{getBestPosition()}{getBestPosition()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Particle\+::get\+Best\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the best position the particle has encountered so far. 
+
+\begin{DoxyReturn}{Returns}
+The vector of the most optimal point found by the particle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_particle_a1136c39474d31011657697370033d085}\label{class_particle_a1136c39474d31011657697370033d085}} 
+\index{Particle@{Particle}!updateFitness@{updateFitness}}
+\index{updateFitness@{updateFitness}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{updateFitness()}{updateFitness()}}
+{\footnotesize\ttfamily void Particle\+::update\+Fitness (\begin{DoxyParamCaption}\item[{double($\ast$)(std\+::vector$<$ double $>$)}]{fitness\+Function }\end{DoxyParamCaption})}
+
+
+
+Update the fitness ({\itshape optimality}) of the particle according to the current position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fitness\+Function} & Function to be optimized. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_particle_a143a80ae4c1831946cb81b20c39b8e35}\label{class_particle_a143a80ae4c1831946cb81b20c39b8e35}} 
+\index{Particle@{Particle}!updateVelocity@{updateVelocity}}
+\index{updateVelocity@{updateVelocity}!Particle@{Particle}}
+\doxysubsubsection{\texorpdfstring{updateVelocity()}{updateVelocity()}}
+{\footnotesize\ttfamily void Particle\+::update\+Velocity (\begin{DoxyParamCaption}\item[{double}]{inertia,  }\item[{double}]{c1,  }\item[{double}]{c2,  }\item[{std\+::vector$<$ double $>$ \&}]{all\+Time\+Best\+Position }\end{DoxyParamCaption})}
+
+
+
+Update the velocity of the particle according to the properties of the swarm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inertia} & Inertia weight hyperparameter. \\
+\hline
+{\em c1} & Weight of the individual\textquotesingle{}s particle best position so far in the update. \\
+\hline
+{\em c2} & Weight of the best position so far across the whole swarm in the update. \\
+\hline
+{\em all\+Time\+Best\+Position} & Best position found so far across the whole swarm. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nmontes/\+One\+Drive/\+Documentos/particle-\/swarm/particle.\+cpp\end{DoxyCompactItemize}

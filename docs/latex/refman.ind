@@ -1,0 +1,47 @@
+\begin{theindex}
+
+  \item {findBestCurrentParticle}
+    \subitem {Swarm}, \hyperpage{9}
+
+  \indexspace
+
+  \item {getBestFitness}
+    \subitem {Particle}, \hyperpage{6}
+  \item {getBestPosition}
+    \subitem {Particle}, \hyperpage{6}
+  \item {getPopulationSize}
+    \subitem {Swarm}, \hyperpage{9}
+  \item {getSpaceDimensions}
+    \subitem {Swarm}, \hyperpage{9}
+
+  \indexspace
+
+  \item {optimizationSearch}
+    \subitem {Swarm}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Particle}, \hyperpage{5}
+    \subitem {getBestFitness}, \hyperpage{6}
+    \subitem {getBestPosition}, \hyperpage{6}
+    \subitem {Particle}, \hyperpage{6}
+    \subitem {updateFitness}, \hyperpage{7}
+    \subitem {updateVelocity}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Swarm}, \hyperpage{7}
+    \subitem {findBestCurrentParticle}, \hyperpage{9}
+    \subitem {getPopulationSize}, \hyperpage{9}
+    \subitem {getSpaceDimensions}, \hyperpage{9}
+    \subitem {optimizationSearch}, \hyperpage{9}
+    \subitem {Swarm}, \hyperpage{8}
+
+  \indexspace
+
+  \item {updateFitness}
+    \subitem {Particle}, \hyperpage{7}
+  \item {updateVelocity}
+    \subitem {Particle}, \hyperpage{7}
+
+\end{theindex}
